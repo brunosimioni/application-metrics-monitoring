@@ -10,7 +10,7 @@ On the other hand, Spring Boot [recommends you to use Jolokia] (http://docs.spri
 
 Additionally, [Spring Boot Admin] (https://github.com/codecentric/spring-boot-admin) offers JMX MBeans inspection support and you can use it to get some data snapshots about JMX use, but it is individual instance oriented. In a clustered Spring Boot environment, getting individual and isolated data from hosts may not be productive neither conclusive.
 
-NewRelic and other APM tools gives the same result as we are trying to find out here, by instrumenting code with JVM layers, but data retention and long time-window may be a problem (if you need to inspect performance in terms of seconds or if you have to host old date.
+NewRelic and other APM tools gives the same result as we are trying to find out here, by instrumenting code with JVM layers, but data retention and long time-window may be a problem (if you need to inspect performance in terms of seconds or if you have to host old date data.
 
 Others initiatives with the same goal, and custom code:
 
