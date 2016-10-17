@@ -24,6 +24,15 @@ Getting Spring Boot Actuator monitoring for self-service dashboards and chats, w
 
 This repository is a proposal to enable Spring Boot monitoring without 3rd-party problems of data retention and transformation, as NewRelic or Datadog does.
 
+The result is achieved by the the flow: 
+
+- Spring Boot get exposed by Actuator
+- Jolokia exposes MBeans through HTTP endpoint
+- Telegraf pull Joloklia endpoints, fetching data and send it to InfluxDB
+- InfluxDB stores time-series data
+- Grafana connects to InfluxDB instance
+- Grafana draws beautiful monitoring dashboards.
+
 ## Solution
 
 1. Configured your Spring Boot instances with [Jolokia](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-jolokia) dependency
