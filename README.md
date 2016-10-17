@@ -10,7 +10,7 @@ On the other hand, Spring Boot [recommends you to use Jolokia] (http://docs.spri
 
 Additionally, [Spring Boot Admin] (https://github.com/codecentric/spring-boot-admin) offers JMX MBeans inspection support and you can use it to get some data snapshots about JMX use, but it is individual instance oriented. In a clustered Spring Boot environment, getting individual and isolated data from hosts may not be productive neither conclusive.
 
-NewRelic and other APM tools gives the same result as we are trying to find out here, by instrumenting code with JVM layers, but data retention and long time-window may be a problem (if you need to inspect performance in terms of seconds or if you have to host old date.
+NewRelic and other APM tools gives the same result as we are trying to find out here, by instrumenting code with JVM layers, but data retention and long time-window may be a problem (if you need to inspect performance in terms of seconds or if you have to host old date data.
 
 Others initiatives with the same goal, and custom code:
 
@@ -23,6 +23,15 @@ Just for consideration, installing and using StatsD and Graphite grants several 
 Getting Spring Boot Actuator monitoring for self-service dashboards and chats, with modern and on-premise operations tooling, by using only out-of-box Spring Boot features and integrations, without any custom code.
 
 This repository is a proposal to enable Spring Boot monitoring without 3rd-party problems of data retention and transformation, as NewRelic or Datadog does.
+
+The result is achieved by the the flow: 
+
+- Spring Boot get exposed by Actuator
+- Jolokia exposes MBeans through HTTP endpoint
+- Telegraf pull Joloklia endpoints, fetching data and send it to InfluxDB
+- InfluxDB stores time-series data
+- Grafana connects to InfluxDB instance
+- Grafana draws beautiful monitoring dashboards.
 
 ## Solution
 
