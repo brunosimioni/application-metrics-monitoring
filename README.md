@@ -6,7 +6,7 @@ A simple mix and aggregation of JMX, Jolokia, Telegraf, InfluxDB and Grafana too
 
 Spring Boot Actuator has no out-of-box tooling for near real-time monitoring charts of gauges and counters metrics at `/metrics` HTTP endpoint. The official documentation current (1.4.1) offers some alternatives to export data in a [custom way for different platforms](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html), but one have to implement by their own the data exportation and parsing.
 
-On the other hand, Spring Boot [recomends you to use Jolokia] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-jolokia) as a managed dependency, to expose internal's JMX MBeans through HTTP. This gives us the required implementation to explore and inspect performance metrics.
+On the other hand, Spring Boot [recommends you to use Jolokia] (http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-jolokia) as a managed dependency, to expose internal's JMX MBeans through HTTP. This gives us the required implementation to explore and inspect performance metrics.
 
 Additionally, [Spring Boot Admin] (https://github.com/codecentric/spring-boot-admin) offers JMX MBeans inspection support and you can use it to get some data snapshots about JMX use, but it is individual instance oriented. In a clustered Spring Boot environment, getting individual and isolated data from hosts may not be productive neither conclusive.
 
