@@ -2,6 +2,7 @@ version: '2'
 services:
 
   influxdb:
+    container_name: influxdb
     image: influxdb:latest
     ports:
       - "8086:8086"
@@ -12,18 +13,26 @@ services:
       INFLUXDB_DATA_ENGINE: tsm1
 
   telegraf:
+    container_name: telegraf
     image: telegraf:latest
     volumes:
-      - ./orderfy-config/telegraf.conf:/etc/telegraf/telegraf.conf:ro 
+      - ./orderfy-config/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     ports:
       - "8125:8125"
     depends_on:
       - influxdb
       - grafana
+    links:
+      - influxdb
 
   grafana:
+    container_name: grafana
     image: grafana/grafana
+    volumes:
+      - ./orderfy-config/:/etc/grafana/scripts
     ports:
       - "3000:3000"
     depends_on:
+      - influxdb
+    links:
       - influxdb
