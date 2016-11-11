@@ -13,7 +13,7 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <artifactId>docker-connector</artifactId>
+    <artifactId>telegraf-httpjson-docker-metrics-glue</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>

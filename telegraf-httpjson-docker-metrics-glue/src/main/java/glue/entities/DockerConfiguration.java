@@ -1,4 +1,4 @@
-package dockerconnector.entities;
+package glue.entities;
 
 import lombok.Data;
 
