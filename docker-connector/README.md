@@ -1,0 +1,1 @@
+# This project intends to generate Telegraf Jolokia Input plugin automaticallly, based on Docker nodes. Instead of putting one instance of Telegraf collector per Docker container, you can also set all collector in just one instance of Telegraf, grabbing dinacally all needed IPs. Attention for one single point of failure.
