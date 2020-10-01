@@ -49,7 +49,7 @@ The result is achieved by the the flow:
 
 7. Create your beautiful dashboards.
 
-## This repo
+## This repository
 This repository was organized as an example of a configuration with all tools for just monitoring, based on docker-compose structure.
 
 `orderfy-config/telegraf.conf`: is an example of monitoring applications modules from [Orderfy](https://github.com/brunosimioni/orderfy) repository, but can be used with any Spring Boot Jolokia-powered repository.
